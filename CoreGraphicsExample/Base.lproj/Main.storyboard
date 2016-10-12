@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreGraphicsExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-oW-FtI" customClass="DrawView" customModule="CoreGraphicsExample" customModuleProvider="target">
+                                <rect key="frame" x="20" y="83" width="553" height="497"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="0.052942154255319146" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-g3-9ce">
+                                <rect key="frame" x="282" y="28" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xT-t8-uSI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHc-kx-Yid">
+                                <rect key="frame" x="543" y="28" width="30" height="30"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sO0-sV-7Yd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-LL-xN8">
+                                <rect key="frame" x="20" y="28" width="42" height="30"/>
+                                <state key="normal" title="Black"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Oa-Wz-8bI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tHc-kx-Yid" firstAttribute="trailing" secondItem="Ec6-oW-FtI" secondAttribute="trailing" id="GbC-HK-FQp"/>
+                            <constraint firstItem="mgW-g3-9ce" firstAttribute="centerY" secondItem="TpE-LL-xN8" secondAttribute="centerY" id="GpV-J3-0kL"/>
+                            <constraint firstItem="mgW-g3-9ce" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O5f-yV-q2s"/>
+                            <constraint firstItem="mgW-g3-9ce" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="S22-UO-U3A"/>
+                            <constraint firstItem="Ec6-oW-FtI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="cy0-Ld-15B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ec6-oW-FtI" secondAttribute="bottom" constant="20" id="eTV-Le-fEF"/>
+                            <constraint firstItem="tHc-kx-Yid" firstAttribute="centerY" secondItem="TpE-LL-xN8" secondAttribute="centerY" id="h8K-kc-GLa"/>
+                            <constraint firstItem="Ec6-oW-FtI" firstAttribute="leading" secondItem="TpE-LL-xN8" secondAttribute="leading" id="hEc-Ws-ycE"/>
+                            <constraint firstItem="tHc-kx-Yid" firstAttribute="leading" relation="lessThanOrEqual" secondItem="mgW-g3-9ce" secondAttribute="trailing" constant="229" id="i9a-o2-hAm"/>
+                            <constraint firstItem="mgW-g3-9ce" firstAttribute="leading" relation="lessThanOrEqual" secondItem="TpE-LL-xN8" secondAttribute="trailing" constant="220" id="nCB-Ch-i2Y"/>
+                            <constraint firstAttribute="trailing" secondItem="tHc-kx-Yid" secondAttribute="trailing" constant="27" id="qMX-N4-YAG"/>
+                            <constraint firstItem="Ec6-oW-FtI" firstAttribute="top" secondItem="TpE-LL-xN8" secondAttribute="bottom" constant="25" id="tNj-Fw-NiW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drawView" destination="Ec6-oW-FtI" id="1G8-QX-Oin"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="365"/>
         </scene>
     </scenes>
 </document>
