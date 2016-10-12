@@ -28,7 +28,7 @@ class DrawView: UIView {
     
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetLineWidth(context, 5)
+        CGContextSetLineWidth(context, 5) 
         CGContextSetLineCap(context, CGLineCap.Round)
 
         for line in lines{
