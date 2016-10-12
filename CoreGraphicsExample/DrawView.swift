@@ -18,6 +18,7 @@ class DrawView: UIView {
         lastPoint = touches.first?.locationInView(self)
     }
     
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let tempPoint = touches.first?.locationInView(self)
         lines.append(Line(start: lastPoint, end: tempPoint!, color: _color))
